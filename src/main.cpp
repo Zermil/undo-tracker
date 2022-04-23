@@ -14,6 +14,8 @@
 
 static int global_counter = 0;
 
+// TODO(#1): Change font option
+
 LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
     switch (wParam) {
