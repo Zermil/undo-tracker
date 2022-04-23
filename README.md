@@ -13,7 +13,7 @@ Unpack `undo-tracker.zip` to a folder of your choice and run `undo-tracker.exe`
 
 Quick note: do not minimize the program, make sure it's running in the background somewhere, be it 
 your other monitor or just'"behind' your main drawing window's program, otherwise it will not 
-count correctly (or at all) until maximized again (it still keeps track of your undos, it just won't 
+count correctly (or at all) until restored again (it still keeps track of your undos, it just won't 
 update the text)
 
 ## Build
