@@ -17,6 +17,10 @@ static int global_counter = 0;
 // TODO(#1): Change font option
 // TODO(#2): Custom text option
 
+// TODO(#3): Option(?) or default behaviour to write to file instead/simultaneously
+//  this will allow to minimize the program to taskbar and still
+//  display everything properly
+
 LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
 {
     switch (wParam) {
