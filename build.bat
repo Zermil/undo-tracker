@@ -11,6 +11,6 @@ pushd %MY_PATH%\build
 set SDL2_PATH="..\deps\SDL2"
 set SDL2_LINK="%SDL2_PATH%\lib\SDL2.lib" "%SDL2_PATH%\lib\SDL2main.lib" "%SDL2_PATH%\lib\SDL2_ttf.lib"
 
-cl ..\src\main.cpp /I%SDL2_PATH%\include /std:c++17 /EHsc %* /Fe:undo-tracker.exe /link %SDL2_LINK% /SUBSYSTEM:windows /ENTRY:mainCRTStartup
+cl ..\src\main.cpp /I%SDL2_PATH%\include /std:c++17 /EHsc %* /Fe:undo-tracker.exe /link user32.lib %SDL2_LINK% /SUBSYSTEM:windows /ENTRY:mainCRTStartup
 
 popd
