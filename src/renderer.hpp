@@ -15,7 +15,7 @@ struct Renderer
     int outline_size;
     
     bool initialize_sdl();
-    void render_text(const char *msg_text, int x, int y);
+    void render_text(const char *msg_text, int x, int y, Uint8 opacity = 255);
 };
 
 #endif // RENDERER_H_
