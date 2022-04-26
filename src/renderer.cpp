@@ -51,12 +51,11 @@ bool Renderer::initialize_sdl()
     return true;
 }
 
-void Renderer::render_text(const char *msg_text, int x, int y, Uint8 opacity)
+void Renderer::render_text(const char *msg_text, int x, int y, SDL_Color color)
 {
-    SDL_Color white = { 255, 255, 255, opacity };
-    SDL_Color black = { 0, 0, 0, opacity };
+    SDL_Color black = { 0, 0, 0, color.a };
     
-    SDL_Surface *font_surface = TTF_RenderText_Blended(font, msg_text, white);
+    SDL_Surface *font_surface = TTF_RenderText_Blended(font, msg_text, color);
     SDL_Surface *outline_surface = TTF_RenderText_Blended(font_outline, msg_text, black);
 
     assert((font_surface != nullptr && outline_surface != nullptr) &&

@@ -11,6 +11,7 @@
 #define CLEAR_COLOR 0, 255, 0, 255
 
 static int global_counter = 0;
+static int global_dy = 0;
 
 // NOTE(Aiden): For some reason, opacity = 0 would loop back to being 255
 //   might be because of TextureBlending(?)
@@ -34,6 +35,7 @@ LRESULT CALLBACK LowLevelKeyboardProc(int nCode, WPARAM wParam, LPARAM lParam)
                 && GetAsyncKeyState(Z_KEY) & 0x8000)
             {
                 global_hint_opacity = 255;
+                global_dy = 0;
                 global_counter++;
             }
         } break;
@@ -70,12 +72,18 @@ int main(int argc, char **argv)
 
         SDL_GetWindowSize(sdl_renderer.window, &width, &height);
         sprintf(buffer, "Pain inflicted: %d times", global_counter);
-        
-        sdl_renderer.render_text(buffer, width * 0.5f, height * 0.5f);
-        sdl_renderer.render_text("+1", (width * 0.5f) + 20, (height * 0.5f) - 35, global_hint_opacity);
 
+        sdl_renderer.render_text(buffer, width * 0.5f, height * 0.5f);
+
+        SDL_Color hint_color = { 255, 255, 255, global_hint_opacity };
+        sdl_renderer.render_text("+1", width * 0.5f, (height * 0.5f) - global_dy, hint_color);
+        
         if (global_hint_opacity > 1) {
             global_hint_opacity -= 2;
+        }
+
+        if (global_dy < 40) {
+            global_dy++;
         }
         
         SDL_RenderPresent(sdl_renderer.render);
