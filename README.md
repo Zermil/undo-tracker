@@ -46,4 +46,4 @@ from there:
 
 ## Screenshots
 
-![obs](./obs.jpg)
+![obs](./img/obs.jpg)
