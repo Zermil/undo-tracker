@@ -11,16 +11,21 @@ Inspired by: [Clip studio pain undo tracker](https://github.com/dotboris/clip-st
 Unpack `undo-tracker.zip` to a folder of your choice and run `undo-tracker.exe`
 (You can find `undo-tracker.zip` in this project's releases on the right side)
 
-Quick note: do not minimize the program, make sure it's running in the background somewhere, be it 
-your other monitor or just 'behind' your main drawing window's program, otherwise it will not 
+### Instructions
+    
+Do not minimize the program, make sure it's running in the background somewhere, be it 
+your other monitor or just 'behind' your main drawing program, otherwise it will not 
 count correctly (or at all) until restored again (it still keeps track of your undos, it just won't 
-update the text). This does not apply when reading from `undos-counted.txt` text file created by the
-program.
+update the text). This does NOT apply when reading from `undos-counted.txt` text file created by the
+program at the start.
 
 Reading from text file allows for more customization BUT your undos will be updating (visually) a little bit slower
 since OBS has to read the contents for the file itself, store it and then display it (as opposed to just capturing
-the contents of a window application)
+the contents of a window application).
 
+In case you delete the `undos-counted.txt` text file, you can press CTRL + Z again, the file will be
+recreated with your current "undos count".
+    
 ## Build
 
 The project mainly targets Windows OS (possible change in the future) so you need MSVC compiler `cl.exe`
